@@ -7,7 +7,7 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <!-- <script src="homeScript.js"></script> -->
+    <script src="quizJS.js"></script>
   </head>
   
 
@@ -49,93 +49,120 @@
       <div class="row">
         <!-- Environmental Symptoms -->
         <div class="col-md-4" style="text-align: center">
-          <h3>Environmental Symptoms</h3>
+          <h3 id="environmentalTitle">Environmental</h3>
           <div class="btn-group-vertical" role="group" aria-label="..." data-toggle="buttons">
             <!-- Just a note, any kid coming in with their parent would qualify under these conditions.  -->
             <label class="btn btn-default">
-              <input type="checkbox" autocomplete="off"> Accompanied by another person
+              <input type="checkbox" autocomplete="off" class="environmentalButton"> Accompanied by another person
             </label>
             <label class="btn btn-default">
-              <input type="checkbox" autocomplete="off"> Limited ability to speak for self
+              <input type="checkbox" autocomplete="off" class="environmentalButton"> Limited ability to speak for self
             </label>            
             <label class="btn btn-default">
-              <input type="checkbox" autocomplete="off"> In charge of own money/posessions
+              <input type="checkbox" autocomplete="off" class="environmentalButton"> In charge of own money/posessions
             </label>          
             <label class="btn btn-default">
-              <input type="checkbox" autocomplete="off"> Unware of current time, date, or location
+              <input type="checkbox" autocomplete="off" class="environmentalButton"> Unware of current time, date, or location
             </label>       
             <label class="btn btn-default">
-              <input type="checkbox" autocomplete="off"> Shows evidence of being controlled
+              <input type="checkbox" autocomplete="off" class="environmentalButton"> Shows evidence of being controlled
             </label>       
             <label class="btn btn-default">
-              <input type="checkbox" autocomplete="off"> Is a minor
+              <input type="checkbox" autocomplete="off" class="environmentalButton"> Is a minor
             </label>       
           </div>
         </div>
 
         <!-- Physical Symptoms -->
         <div class="col-md-4" style="text-align: center">
-          <h3>Physical Symptoms</h3>
+          <h3 id="physicalTitle">Physical</h3>
           <div class="btn-group-vertical" role="group" aria-label="..." data-toggle="buttons">
             <label class="btn btn-default">
-              <input type="checkbox" autocomplete="off"> Poor hygiene
+              <input type="checkbox" autocomplete="off" class="physicalButton"> Poor hygiene
             </label>       
             <label class="btn btn-default">
-              <input type="checkbox" autocomplete="off"> Serious dental problems
+              <input type="checkbox" autocomplete="off"class="physicalButton"> Serious dental problems
             </label>       
             <label class="btn btn-default">
-              <input type="checkbox" autocomplete="off"> GI problems
+              <input type="checkbox" autocomplete="off" class="physicalButton"> GI problems
             </label>       
             <label class="btn btn-default">
-              <input type="checkbox" autocomplete="off"> Bruising
+              <input type="checkbox" autocomplete="off" class="physicalButton"> Bruising
             </label>       
             <label class="btn btn-default">
-              <input type="checkbox" autocomplete="off"> Contusions
+              <input type="checkbox" autocomplete="off" class="physicalButton"> Contusions
             </label>       
             <label class="btn btn-default">
-              <input type="checkbox" autocomplete="off"> Factures
+              <input type="checkbox" autocomplete="off" class="physicalButton"> Factures
             </label>       
             <label class="btn btn-default">
-              <input type="checkbox" autocomplete="off"> Sexually transmitted diseases
+              <input type="checkbox" autocomplete="off" class="physicalButton"> Sexually transmitted diseases
             </label>       
             <label class="btn btn-default">
-              <input type="checkbox" autocomplete="off"> Pelvic pain
+              <input type="checkbox" autocomplete="off" class="physicalButton"> Pelvic pain
             </label>       
             <label class="btn btn-default">
-              <input type="checkbox" autocomplete="off"> Evidence of unsafe abortion
+              <input type="checkbox" autocomplete="off" class="physicalButton"> Evidence of unsafe abortion
             </label>       
             <label class="btn btn-default">
-              <input type="checkbox" autocomplete="off"> Substance addiction
+              <input type="checkbox" autocomplete="off" class="physicalButton"> Substance addiction
             </label>       
           </div>
         </div>
 
         <!-- Psychological Symptoms -->
         <div class="col-md-4" style="text-align: center">
-          <h3>Psychological Symptoms</h3>
+          <h3 id="psychologicalTitle">Psychological</h3>
           <div class="btn-group-vertical" role="group" aria-label="..." data-toggle="buttons">
             <label class="btn btn-default">
-              <input type="checkbox" autocomplete="off"> Confusion
+              <input type="checkbox" autocomplete="off" class="psychologicalButton"> Confusion
             </label>       
             <label class="btn btn-default">
-              <input type="checkbox" autocomplete="off"> Memory loss
+              <input type="checkbox" autocomplete="off" class="psychologicalButton"> Memory loss
             </label>       
             <label class="btn btn-default">
-              <input type="checkbox" autocomplete="off"> Depression
+              <input type="checkbox" autocomplete="off" class="psychologicalButton"> Depression
             </label>       
             <label class="btn btn-default">
-              <input type="checkbox" autocomplete="off"> Anxiety
+              <input type="checkbox" autocomplete="off" class="psychologicalButton"> Anxiety
             </label>       
             <label class="btn btn-default">
-              <input type="checkbox" autocomplete="off"> PTSD symptoms
+              <input type="checkbox" autocomplete="off" class="psychologicalButton"> PTSD symptoms
             </label>       
             <label class="btn btn-default">
-              <input type="checkbox" autocomplete="off"> Lack of emotion
+              <input type="checkbox" autocomplete="off" class="psychologicalButton"> Lack of emotion
             </label>       
           </div>
         </div>
 
       </div> <!-- Row -->
+
+<!--       <div class="row">
+        <div class="col-md-12">
+          <div class="container">
+            <p class="btn btn-default" role="button" id="doneButton">Done</p>
+          </div>
+        </div>
+      </div> -->
+
+
+      <!-- Result message -->
+      <div class="row">
+        <br>
+        <div class="col-md-12">
+          <div class="container">
+
+          <div class="jumbotron" id="trueMessage" style="display:none">
+            <h2> Your person might be trafficked. <small><a href="resources.html">Click here to see what you can do</a></small></h2>
+          </div>
+
+          <div class="jumbotron" id="falseMessage" style="display:none">
+            <h2> Your person doesn't seem to be trafficked. <small><a href="resources.html">If you're still concerned, click here to see what you can do</a></small></h2>
+          </div>
+
+          </div>
+        </div>
+      </div>
     </body>
 
  
